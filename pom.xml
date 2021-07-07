@@ -44,7 +44,7 @@
 					<execution>
 						<phase>package</phase>
 						<goals>
-							<goal>makeAggregateBom</goal>
+					           <goal>makeAggregateBom</goal>
 						</goals>
 					</execution>
 				</executions>
@@ -58,7 +58,7 @@
 					<includeSystemScope>true</includeSystemScope>
 					<includeTestScope>false</includeTestScope>
 					<includeLicenseText>false</includeLicenseText>
-					<outputFormat>all</outputFormat>
+					<outputFormat>xml</outputFormat>
 					<outputName>bom</outputName>
 				</configuration>
 			</plugin>
