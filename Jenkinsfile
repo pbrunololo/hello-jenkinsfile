@@ -6,6 +6,6 @@
     } // withMaven will discover the generated Maven artifacts, JUnit Surefire & FailSafe reports and FindBugs reports
   }
   stage('dependencyTrackPublisher') {
-        	dependencyCheckPublisher pattern: 'target/dependency-check-report.xml'
+    dependencyCheckPublisher pattern: 'target/dependency-check-report.xml'
   }
 }
