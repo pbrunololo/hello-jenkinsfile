@@ -1,0 +1,13 @@
+FROM maven:latest as builder
+
+COPY pom.xml /usr/local/pom.xml
+COPY src /usr/local/src
+WORKDIR /usr/local/
+
+RUN mvn clean install
+
+FROM openjdk:11-jdk-slim
+EXPOSE 8080
+ARG JAR_FILE=/usr/local/target/*.jar
+COPY --from=builder ${JAR_FILE} app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
