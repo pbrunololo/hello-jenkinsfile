@@ -5,7 +5,13 @@
       sh "mvn clean package"
     } // withMaven will discover the generated Maven artifacts, JUnit Surefire & FailSafe reports and FindBugs reports
   }
-  stage('dependencyTrackPublisher') {
-    dependencyCheckPublisher pattern: 'target/dependency-check-report.xml'
+  stage('dependencyCheckPublisher') {
+    {  
+     withMaven(maven : 'maven') {  
+      sh 'mvn dependency-check:check'  
+     }  
+   
+     dependencyCheckPublisher pattern: 'target/dependency-check-report.xml'  
+   }  
   }
 }
