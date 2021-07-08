@@ -54,7 +54,7 @@
 				  </execution>  
 				</executions>  
 				<configuration>  
-					<failBuildOnCVSS>5</failBuildOnCVSS>  
+					<failBuildOnCVSS>11</failBuildOnCVSS>  
 					<!-- Generate all report formats -->  
 					<format>ALL</format>  
 					<!-- Don't use Nexus Analyzer -->  
