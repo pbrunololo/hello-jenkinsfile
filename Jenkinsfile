@@ -7,7 +7,7 @@ node {
   }
     stage('dependencyTrackPublisher') {
             withCredentials([string(credentialsId: 'api_key_dependency', variable: 'API_KEY')]) {
-                dependencyTrackPublisher artifact: 'target/bom.xml', projectName: 'my-project', projectVersion: 'my-version', synchronous: true, dependencyTrackApiKey: API_KEY, failedTotalCritical: 1
+                dependencyTrackPublisher artifact: 'target/bom.xml', projectName: 'my-project-block', projectVersion: 'my-version', synchronous: true, dependencyTrackApiKey: API_KEY, failedTotalCritical: 1
         }
     }
 }
